@@ -8,7 +8,7 @@ Android client, and is published here so others can build on it.
 
 ## What's inside
 
-Two Gradle modules, copied from the Bunny project as-is:
+Three Gradle modules:
 
 - **`:core`** — the contract: `ExtractionBackend` plus the domain
   models (`VideoItem`, `VideoDetails`, `PlaybackStreams`, …). Pure
@@ -32,6 +32,10 @@ Two Gradle modules, copied from the Bunny project as-is:
     progressive stream is attempted so the video still plays.
   - A remote **engine config** (personas, SABR gates, budgets)
     fetched at runtime, with safe built-in defaults.
+- **`:app`** — a standalone Android client with a Compose home/search
+  feed, video details, Media3 playback, and system Picture-in-Picture.
+  This client uses local engine defaults (no Bunny remote config) and
+  does not integrate the engine's SABR path.
 
 ## Honest notes
 
@@ -50,12 +54,12 @@ Two Gradle modules, copied from the Bunny project as-is:
 
 ## Build & test
 
-Requires JDK 17 and Gradle 8.13 (the wrapper script is included;
-the wrapper JAR is not bundled — use Android Studio or a local
-Gradle 8.13 installation).
+Requires JDK 17, Gradle 8.13, and Android SDK platform 36 (the wrapper
+script is included; the wrapper JAR is not bundled — use Android Studio
+or a local Gradle 8.13 installation).
 
 ```
-./gradlew :engine:test
+gradle :core:test :engine:test :app:testDebugUnitTest :app:assembleDebug
 ```
 
 ## License

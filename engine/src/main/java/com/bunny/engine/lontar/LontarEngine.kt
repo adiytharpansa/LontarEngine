@@ -62,6 +62,8 @@ class LontarEngine(
      */
     private val sabrGovernance: com.bunny.engine.lontar.sabr.SabrGovernance =
         com.bunny.engine.lontar.sabr.SabrGovernance(SabrGovernanceStore.NONE),
+    /** Allow this client to fetch Bunny's remote runtime config. */
+    private val remoteConfigEnabled: Boolean = true,
 ) : ExtractionBackend {
 
     override val id: String = "lontar"
@@ -1482,7 +1484,11 @@ class LontarEngine(
                 val configJob = async {
                     if (!configFetched) {
                         configFetched = true
-                        config = fetchRemoteConfig()
+                        config = if (remoteConfigEnabled) {
+                            fetchRemoteConfig()
+                        } else {
+                            EngineConfig.DEFAULTS
+                        }
                     }
                 }
                 // Whatever config is already in hand (the defaults on a

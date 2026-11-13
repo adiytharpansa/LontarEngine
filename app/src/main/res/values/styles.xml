@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.Lontar" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:colorAccent">#86D6C2</item>
+        <item name="android:navigationBarColor">#101413</item>
+        <item name="android:statusBarColor">#101413</item>
+    </style>
+</resources>

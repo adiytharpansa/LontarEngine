@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LontarEngine"
 include(":core", ":engine")
+include(":app")
