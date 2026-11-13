@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.weight
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -361,7 +360,7 @@ private fun PlayerContent(
                     PlayerView(context).apply {
                         resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
                         useController = !isInPip
-                        player = player
+                        this.player = player
                         onPlayerViewReady(this)
                     }
                 },
