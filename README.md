@@ -60,6 +60,4 @@ Gradle 8.13 installation).
 
 ## License
 
-All rights reserved for now — the owner is deciding on a public
-license. Publishing here is for reading and evaluation; ask before
-redistributing.
+[MIT](LICENSE) — free for anyone to use, including commercially.
