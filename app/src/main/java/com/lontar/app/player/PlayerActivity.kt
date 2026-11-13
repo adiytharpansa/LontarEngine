@@ -51,7 +51,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-@UnstableApi
+@androidx.annotation.OptIn(markerClass = [UnstableApi::class])
 class PlayerActivity : ComponentActivity() {
     private var player: ExoPlayer? = null
     private var playerState by mutableStateOf<ExoPlayer?>(null)
